@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200" width="100%" height="200">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; rx: 12px; }
+      .grid-cell { fill: #161b22; rx: 4px; }
+      .grid-contrib { fill: #0e4429; rx: 4px; }
+      .title { font-family: 'Segoe UI', Ubuntu, sans-serif; font-size: 16px; font-weight: 600; fill: #58a6ff; }
+      .status { font-family: 'Segoe UI', Ubuntu, sans-serif; font-size: 13px; fill: #8b949e; }
+      .board-bg { fill: #161b22; stroke: #30363d; stroke-width: 2; rx: 8px; }
+      .board-line { stroke: #30363d; stroke-width: 4; stroke-linecap: round; }
+      
+      /* Symbol Animations */
+      .x-move, .o-move, .win-line, .status-text {
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+      }
+      
+      /* Move 1: X (Top-Left) */
+      .m1 { animation-name: showM1; }
+      @keyframes showM1 {
+        0%, 10% { opacity: 0; stroke-dashoffset: 50; }
+        15%, 90% { opacity: 1; stroke-dashoffset: 0; }
+        95%, 100% { opacity: 0; }
+      }
+      
+      /* Move 2: O (Center) */
+      .m2 { animation-name: showM2; }
+      @keyframes showM2 {
+        0%, 25% { opacity: 0; stroke-dashoffset: 100; }
+        30%, 90% { opacity: 1; stroke-dashoffset: 0; }
+        95%, 100% { opacity: 0; }
+      }
+      
+      /* Move 3: X (Top-Right) */
+      .m3 { animation-name: showM3; }
+      @keyframes showM3 {
+        0%, 40% { opacity: 0; stroke-dashoffset: 50; }
+        45%, 90% { opacity: 1; stroke-dashoffset: 0; }
+        95%, 100% { opacity: 0; }
+      }
+      
+      /* Move 4: O (Middle-Left) */
+      .m4 { animation-name: showM4; }
+      @keyframes showM4 {
+        0%, 55% { opacity: 0; stroke-dashoffset: 100; }
+        60%, 90% { opacity: 1; stroke-dashoffset: 0; }
+        95%, 100% { opacity: 0; }
+      }
+      
+      /* Move 5: X (Top-Middle) -> WIN! */
+      .m5 { animation-name: showM5; }
+      @keyframes showM5 {
+        0%, 70% { opacity: 0; stroke-dashoffset: 50; }
+        75%, 90% { opacity: 1; stroke-dashoffset: 0; }
+        95%, 100% { opacity: 0; }
+      }
+      
+      /* Winning Line */
+      .win-line { animation-name: showWin; stroke: #39d353; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 200; }
+      @keyframes showWin {
+        0%, 80% { opacity: 0; stroke-dashoffset: 200; }
+        85%, 92% { opacity: 1; stroke-dashoffset: 0; }
+        95%, 100% { opacity: 0; }
+      }
+      
+      .x-stroke { stroke: #39d353; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 50; }
+      .o-stroke { stroke: #bc8cff; stroke-width: 5; fill: none; stroke-dasharray: 100; }
+    </style>
+  </defs>
+
+  <!-- Container Background -->
+  <rect width="650" height="200" class="bg" />
+
+  <!-- Background Contribution Grid Simulation -->
+  <g opacity="0.35" transform="translate(20, 20)">
+    <!-- Columns of contribution squares -->
+    <rect x="0" y="0" width="10" height="10" class="grid-contrib" />
+    <rect x="0" y="14" width="10" height="10" class="grid-cell" />
+    <rect x="0" y="28" width="10" height="10" class="grid-contrib" />
+    <rect x="0" y="42" width="10" height="10" class="grid-cell" />
+    <rect x="0" y="56" width="10" height="10" class="grid-cell" />
+
+    <rect x="14" y="0" width="10" height="10" class="grid-cell" />
+    <rect x="14" y="14" width="10" height="10" class="grid-contrib" />
+    <rect x="14" y="28" width="10" height="10" class="grid-cell" />
+    <rect x="14" y="42" width="10" height="10" class="grid-contrib" />
+    <rect x="14" y="56" width="10" height="10" class="grid-contrib" />
+
+    <rect x="28" y="0" width="10" height="10" class="grid-contrib" />
+    <rect x="28" y="14" width="10" height="10" class="grid-cell" />
+    <rect x="28" y="28" width="10" height="10" class="grid-contrib" />
+    <rect x="28" y="42" width="10" height="10" class="grid-cell" />
+    <rect x="28" y="56" width="10" height="10" class="grid-cell" />
+
+    <!-- Right Side Contribution Grid -->
+    <rect x="420" y="0" width="10" height="10" class="grid-contrib" />
+    <rect x="420" y="14" width="10" height="10" class="grid-contrib" />
+    <rect x="420" y="28" width="10" height="10" class="grid-cell" />
+    <rect x="420" y="42" width="10" height="10" class="grid-contrib" />
+    <rect x="420" y="56" width="10" height="10" class="grid-cell" />
+
+    <rect x="434" y="0" width="10" height="10" class="grid-cell" />
+    <rect x="434" y="14" width="10" height="10" class="grid-contrib" />
+    <rect x="434" y="28" width="10" height="10" class="grid-contrib" />
+    <rect x="434" y="42" width="10" height="10" class="grid-cell" />
+    <rect x="434" y="56" width="10" height="10" class="grid-contrib" />
+  </g>
+
+  <!-- Title & Subtitle -->
+  <text x="30" y="40" class="title">🎮 Contribution Grid Tic-Tac-Toe</text>
+  <text x="30" y="62" class="status">AI Player (X) vs Opponent (O)</text>
+
+  <!-- Tic-Tac-Toe Board Container -->
+  <g transform="translate(240, 25)">
+    <!-- Board Background -->
+    <rect x="0" y="0" width="150" height="150" class="board-bg" />
+    
+    <!-- Grid Lines -->
+    <line x1="50" y1="10" x2="50" y2="140" class="board-line" />
+    <line x1="100" y1="10" x2="100" y2="140" class="board-line" />
+    <line x1="10" y1="50" x2="140" y2="50" class="board-line" />
+    <line x1="10" y1="100" x2="140" y2="100" class="board-line" />
+
+    <!-- Moves -->
+    <!-- Move 1: X (Top-Left) -->
+    <g class="x-move m1">
+      <line x1="15" y1="15" x2="35" y2="35" class="x-stroke" />
+      <line x1="35" y1="15" x2="15" y2="35" class="x-stroke" />
+    </g>
+
+    <!-- Move 2: O (Center) -->
+    <g class="o-move m2">
+      <circle cx="75" cy="75" r="12" class="o-stroke" />
+    </g>
+
+    <!-- Move 3: X (Top-Right) -->
+    <g class="x-move m3">
+      <line x1="115" y1="15" x2="135" y2="35" class="x-stroke" />
+      <line x1="135" y1="15" x2="115" y2="35" class="x-stroke" />
+    </g>
+
+    <!-- Move 4: O (Middle-Left) -->
+    <g class="o-move m4">
+      <circle cx="25" cy="75" r="12" class="o-stroke" />
+    </g>
+
+    <!-- Move 5: X (Top-Middle) -> WIN! -->
+    <g class="x-move m5">
+      <line x1="65" y1="15" x2="85" y2="35" class="x-stroke" />
+      <line x1="85" y1="15" x2="65" y2="35" class="x-stroke" />
+    </g>
+
+    <!-- Winning Line (Top Row: Top-Left to Top-Right) -->
+    <line x1="10" y1="25" x2="140" y2="25" class="win-line" />
+  </g>
+
+  <!-- Side Stats / Legend -->
+  <g transform="translate(420, 45)">
+    <rect x="0" y="0" width="200" height="110" fill="#161b22" rx="8" stroke="#30363d" />
+    <text x="15" y="30" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#39d353">✖ Player X (AI): 100%</text>
+    <text x="15" y="55" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#bc8cff">⭕ Player O: 0%</text>
+    <text x="15" y="85" font-family="'Segoe UI', sans-serif" font-size="12" fill="#8b949e">Status: ⚡ X Wins!</text>
+  </g>
+</svg>
