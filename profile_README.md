@@ -92,7 +92,7 @@
 ## 🎮 Contribution Grid Tic-Tac-Toe
 
 <div align="center">
-  <img src="./tictactoe.svg" alt="Contribution Grid Tic-Tac-Toe" width="100%" />
+  <img src="https://raw.githubusercontent.com/Doctor1018/Doctor1018/main/tictactoe.svg" alt="Contribution Grid Tic-Tac-Toe" width="100%" />
 </div>
 
 ---
