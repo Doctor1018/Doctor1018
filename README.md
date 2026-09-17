@@ -80,12 +80,10 @@
 
 | Project | Description | Tech Stack | Repository |
 | :--- | :--- | :--- | :---: |
-| **💾 Smart Storage Optimizer** | ML workload classification (Random Forest), BLAKE3 hashing, entropy analysis, drift detection (98.2% constraint compliance). | Python, PyTorch, SQLite, FastAPI, BLAKE3 | [`View Repo`](https://github.com/Doctor1018/AI-Driven-Smart-Storage-Optimizer) |
-| **🤖 Workspace RAG Assistant** | Local document intelligence AI agent with ChromaDB, LangChain, & FastAPI RAG search. | FastAPI, ChromaDB, LangChain, PyTorch, Docker | [`View Repo`](https://github.com/Doctor1018/Personal-Workspace-Assistant) |
-| **🧠 Brain Tumor Segmentation** | Medical MRI image segmentation using 3D U-Net on BraTS dataset achieving **0.9284 Dice Score**. | PyTorch, U-Net, OpenCV, BraTS, Python | [`View Repo`](https://github.com/Doctor1018/Brain-Tumor-Segmentation) |
-| **🛡️ Network Intrusion Classifier** | Machine learning threat classification pipeline on NSL-KDD dataset detecting zero-day cyberattacks. | Python, Scikit-Learn, XGBoost, Pandas | [`View Repo`](https://github.com/Doctor1018/Network-Intrusion-Detection) |
-| **🎵 YouTube Music Extension** | Chrome extension for YouTube Music automation, global hotkeys, & Web Audio API equalizer. | JavaScript, Chrome API, HTML5/CSS3 | [`View Repo`](https://github.com/Doctor1018/YouTube-Music-Extension) |
-| **✂️ CREDENCE Neural Pruning** | Dynamic neural network pruning & channel gating algorithm for CIFAR-10 inference speedup. | PyTorch, Torchvision, Python | [`View Repo`](https://github.com/Doctor1018/CREDENCE) |
+| **💾 Smart Storage Optimizer** | ML workload classification (Random Forest), BLAKE3 hashing, entropy analysis, drift detection (98.2% constraint compliance). | Python, PyTorch, SQLite, FastAPI, BLAKE3 | [`View Repo`](https://github.com/Doctor1018/Storage-Optimizer) |
+| **🤖 Workspace RAG Assistant** | Local document intelligence AI agent with ChromaDB, LangChain, & FastAPI RAG search. | FastAPI, ChromaDB, LangChain, PyTorch, Docker | [`View Repo`](https://github.com/Doctor1018/Personal-Workspace-Agent) |
+| **🧠 Brain Tumor Segmentation** | Medical MRI image segmentation using 3D U-Net on BraTS dataset achieving **0.9284 Dice Score**. | PyTorch, U-Net, OpenCV, BraTS, Python | [`View Repo`](https://github.com/Doctor1018/Brain-Tumor-Segmentation-) |
+| **🎵 YouTube Music Extension** | Chrome extension for YouTube Music automation, global hotkeys, & Web Audio API equalizer. | JavaScript, Chrome API, HTML5/CSS3 | [`View Repo`](https://github.com/Doctor1018/YT-Music-Sort) |
 
 ---
 
